@@ -13,11 +13,11 @@ const bot = new Bot(token)
 const sendMsgToGroup = async (ctx: Context, msg: string) => {
   const splitmsg = msg?.split(',')
   const groupId = splitmsg
-    .find(fn => fn.match(/\^ID:-1002249803972/))
+    .find(fn => fn.match(/ID:/))
     ?.replace('ID:', '')
     .trim()
   const newmsg = splitmsg
-    .find(fn => fn.match(/\^MSG:/))
+    .find(fn => fn.match(/MSG:/))
     ?.replace('MSG:', '')
     .trim()
   if (groupId) {
